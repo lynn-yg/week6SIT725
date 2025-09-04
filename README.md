@@ -52,3 +52,28 @@ Project Structure;
 ├── public/
 │   └── index.html      # Static front-end HTML page
 
+---
+
+## 🧪 Testing
+
+This project includes automated tests written with **Mocha**, **Chai**, and **Supertest**.  
+The tests cover all calculator routes (`/add`, `/subtract`, `/multiply`, `/divide`) and edge cases (invalid inputs, division by zero), plus a health check.
+
+### Run tests
+```bash
+npm test
+Expected Output
+yaml
+Copy code
+  Express Calculator
+    ✔ GET /add?a=2&b=3 -> { a: 2, b: 3, result: 5 }
+    ✔ GET /add with invalid input -> 400
+    ✔ GET /subtract?a=10&b=4 -> { a: 10, b: 4, result: 6 }
+    ✔ GET /multiply?a=7&b=6 -> { a: 7, b: 6, result: 42 }
+    ✔ GET /divide?a=12&b=4 -> { a: 12, b: 4, result: 3 }
+    ✔ GET /divide with b=0 -> 400
+    ✔ GET /health -> { ok: true }
+
+  12 passing
+If all tests pass, you’re ready to go ✅
+
